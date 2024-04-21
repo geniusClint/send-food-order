@@ -1,0 +1,12 @@
+<title><%= @page_title || "Order Food Online | Quick & Easy Ordering | Send Food Order" %></title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bowlby+One+SC&display=swap" rel="stylesheet">
+<%= csrf_meta_tags %>
+<%= csp_meta_tag %>
+<%= stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload" %>
+<%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+<%= javascript_importmap_tags %>
+<%= favicon_link_tag asset_path("sfo_favicon_2.png") %>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=<%= Rails.application.credentials[:google_maps_api_key] %>&libraries=places&loading=async" data-turbolinks-eval="false"></script>

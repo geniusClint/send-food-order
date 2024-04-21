@@ -2,12 +2,77 @@
 @tailwind components;
 @tailwind utilities;
 
-/*
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
 
-@layer components {
-  .btn-primary {
-    @apply py-2 px-4 bg-blue-200;
+@layer base {
+
+  [type="text"],
+  [type="email"],
+  [type="url"],
+  [type="password"],
+  [type="number"],
+  [type="date"],
+  [type="datetime-local"],
+  [type="month"],
+  [type="search"],
+  [type="tel"],
+  [type="time"],
+  [type="week"],
+  [multiple],
+  textarea,
+  select {
+    @apply block border border-primary-800 focus:border-accent-400 focus:ring-accent-400 w-full rounded;
+  }
+
+  [type="checkbox"],
+  [type="radio"] {
+    @apply border border-primary-800 focus:border-accent-400 focus:ring-accent-400 w-1 p-3 rounded;
   }
 }
 
-*/
+@layer utilities {
+  .padding {
+    @apply sm:px-16 px-8 sm:py-24 py-12;
+  }
+
+  .padding-x {
+    @apply sm:px-16 px-8;
+  }
+
+  .padding-y {
+    @apply sm:py-24 py-12;
+  }
+
+  .padding-l {
+    @apply sm:pl-16 pl-8;
+  }
+
+  .padding-r {
+    @apply sm:pr-16 pr-8;
+  }
+
+  .padding-t {
+    @apply sm:pt-24 pt-12;
+  }
+
+  .padding-b {
+    @apply sm:pb-24 pb-12;
+  }
+
+  .actions {
+    & input {
+      @apply w-full bg-primary-800 py-3 rounded-md text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400;
+    }
+  }
+}
+
+/*
+  .field {
+    & label {
+      @apply text-sm font-medium text-primary-800;
+    }
+
+} */

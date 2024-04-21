@@ -1,0 +1,38 @@
+<div class="min-h-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-md w-full space-y-8">
+    <div>
+      <%= link_to root_path do%>
+        <%= image_tag("sfo_logo_2.svg", class: "mx-auto h-48 w-auto", :alt => "Send Food Order Logo") %>
+      <% end %>
+      <h2 class="mt-6 text-3xl font-brand text-accent-400">
+        Sign Up
+      </h2>
+      <p class="text-primary-800">Create your account. It's free and only takes a few seconds...</p>
+    </div>
+    <%= form_for(resource, as: resource_name, url: user_registration_path) do |f| %>
+      <%= render "devise/shared/error_messages", resource: resource %>
+      <div class="grid grid-cols-2 gap-2">
+        <div class="pb-4">
+          <%= f.text_field :first_name, autofocus: true, autocomplete: "given-name", placeholder: "First Name" %>
+        </div>
+        <div class="pb-4">
+          <%= f.text_field :last_name, autocomplete: "family-name", placeholder: "Last Name" %>
+        </div>
+      </div>
+      <div class="pb-4">
+        <%= f.email_field :email, autocomplete: "email", placeholder: "Email" %>
+      </div>
+      <div class="pb-4">
+        <%= f.password_field :password, autocomplete: "new-password", placeholder: "Password" %>
+      </div>
+      <div class="pb-4">
+        <%= f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Confirm Password"%>
+      </div>
+      <div class="actions">
+        <%= f.submit "Sign up" %>
+      </div>
+    <% end %>
+    <div class="p-3">
+      <%= link_to "Already Registered? Log in", new_user_session_path %><br />
+    </div>
+  </div>

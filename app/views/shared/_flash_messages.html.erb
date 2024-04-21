@@ -1,0 +1,13 @@
+<% if notice %>
+  <div class="notice rounded-md bg-green-50 p-4 font-medium text-green-800" role="alert"><%= notice %></div>
+<% end %>
+<% if alert %>
+  <div class="alert rounded-md bg-yellow-50 p-4 font-medium text-yellow-800" role="alert""><%= alert %></div>
+<% end %>
+<% if flash[:errors] %>
+  <div class="errors rounded-md bg-red-50 p-4 font-medium text-red-800" role="alert">
+    <% flash[:errors].each do |error| %>
+      <%= error %>
+    <% end %>
+  </div>
+<% end %>
