@@ -1,0 +1,11 @@
+<div class="w-full">
+
+  <div class="flex justify-between items-center">
+    <h1 class="font-bold text-4xl">Addresses</h1>
+    <%= link_to 'New Address', new_address_path, class: "block rounded-md py-3 px-5 bg-primary-800 text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+  </div>
+
+  <div id="addresses" class="min-w-full">
+    <%= render @addresses %>
+  </div>
+</div>

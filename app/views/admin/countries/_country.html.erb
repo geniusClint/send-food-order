@@ -1,0 +1,15 @@
+<div id="<%= dom_id country %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= country.name %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Code:</strong>
+    <%= country.code %>
+  </p>
+  <% if action_name != "show" %>
+    <%= link_to "Show this country", admin_country_path(country), class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    <%= link_to "Edit this country", edit_admin_country_path(country), class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

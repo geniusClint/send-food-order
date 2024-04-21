@@ -1,0 +1,35 @@
+<div id="<%= dom_id address %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Address type:</strong>
+    <%= address.address_type %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Address1:</strong>
+    <%= address.address1 %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Address2:</strong>
+    <%= address.address2 %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Suite:</strong>
+    <%= address.suite %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">City:</strong>
+    <%= address.city %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">State:</strong>
+    <%= address.state_id %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Zipcode:</strong>
+    <%= address.zipcode %>
+  </p>
+  <% if action_name != "show" %>
+    <%= link_to "Show this address", address, class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    <%= link_to 'Edit this address', edit_address_path(address), class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    <hr class="mt-6">
+  <% end %>
+</div>
