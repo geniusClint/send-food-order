@@ -1,4 +1,5 @@
 <% if resource.errors.any? %>
+  <% logger.info "Devise Errors: #{resource.errors.full_messages.join(', ')}" %>
   <div id="error_explanation" data-turbo-cache="false" class="bg-primary-complement-50 border border-primary-complement-400 text-primary-complement-950 px-4 py-3 mb-5 rounded relative" role="alert">
     <ul >
       <% resource.errors.full_messages.each do |message| %>

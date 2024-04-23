@@ -30,6 +30,7 @@ class Admin::StatesController < ApplicationController
         format.html { redirect_to admin_state_url(@state), notice: "State was successfully created." }
         format.json { render :show, status: :created, location: @state }
       else
+        logger.error "Error creating state: #{@state.errors.full_messages.join(', ')}"
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @state.errors, status: :unprocessable_entity }
       end
@@ -43,6 +44,7 @@ class Admin::StatesController < ApplicationController
         format.html { redirect_to admin_state_url(@state), notice: "State was successfully updated." }
         format.json { render :show, status: :ok, location: @state }
       else
+        logger.error "Error updating state: #{@state.errors.full_messages.join(', ')}"
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @state.errors, status: :unprocessable_entity }
       end

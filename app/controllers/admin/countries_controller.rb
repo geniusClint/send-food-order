@@ -30,6 +30,7 @@ class Admin::CountriesController < ApplicationController
         format.html { redirect_to admin_country_url(@country), notice: "Country was successfully created." }
         format.json { render :show, status: :created, location: @country }
       else
+        logger.error "Error creating country: #{@country.errors.full_messages.join(', ')}"
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @country.errors, status: :unprocessable_entity }
       end
@@ -43,6 +44,7 @@ class Admin::CountriesController < ApplicationController
         format.html { redirect_to admin_country_url(@country), notice: "Country was successfully updated." }
         format.json { render :show, status: :ok, location: @country }
       else
+        logger.error "Error updating country: #{@country.errors.full_messages.join(', ')}"
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @country.errors, status: :unprocessable_entity }
       end

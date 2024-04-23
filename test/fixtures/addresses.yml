@@ -2,22 +2,20 @@
 
 one:
   address_type: 1
-  address1: MyString
-  address2: MyString
-  suite: MyString
-  city: MyString
+  address1: Address Line 1
+  address2: Address Line 2
+  suite: Suite One
+  city: Some City
   state: one
-  zipcode: MyString
-  addressable: one
-  addressable_type: Addressable
+  zipcode: 76111
+  addressable: (User)
 
 two:
   address_type: 1
-  address1: MyString
-  address2: MyString
-  suite: MyString
-  city: MyString
+  address1: Address Line 1
+  address2: Address Line 2
+  suite: Suite Two
+  city: Another City
   state: two
-  zipcode: MyString
-  addressable: two
-  addressable_type: Addressable
+  zipcode: 79222
+  addressable: admin_one (User)
