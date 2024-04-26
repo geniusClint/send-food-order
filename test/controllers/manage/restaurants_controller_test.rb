@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require "test_helper"
 
 class Manage::RestaurantsControllerTest < ActionDispatch::IntegrationTest
@@ -17,10 +19,11 @@ class Manage::RestaurantsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create restaurant" do
     assert_difference("Restaurant.count") do
-      post manage_restaurants_url, params: { restaurant: {  } }
+      post manage_restaurants_url, params: { restaurant: { city: @restaurant.city, state_id: @restaurant.state.id, location_name: "Another Location", name: "Another Restaurant", slug: "another-restaurant-another-location-city-one-tx" } }
     end
 
-    assert_redirected_to manage_restaurant_url(Restaurant.last)
+    created_restaurant = Restaurant.find_by(slug: "another-restaurant-another-location-city-one-tx")
+    assert_redirected_to manage_restaurant_url(created_restaurant)
   end
 
   test "should show restaurant" do
@@ -34,8 +37,10 @@ class Manage::RestaurantsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update restaurant" do
-    patch manage_restaurant_url(@restaurant), params: { restaurant: {  } }
-    assert_redirected_to manage_restaurant_url(@restaurant)
+    patch manage_restaurant_url(@restaurant), params: { restaurant: { city: @restaurant.city, state_id: @restaurant.state.id, location_name: @restaurant.location_name, name: "Changed Name" } }
+
+    changed_restaurant = Restaurant.find_by(slug: "changed-name-mystring-city-one-tx")
+    assert_redirected_to manage_restaurant_url(changed_restaurant)
   end
 
   test "should destroy restaurant" do

@@ -4,7 +4,7 @@ require "test_helper"
 
 class StatesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @state = states(:one)
+    @state = states(:test)
   end
 
   test "should get index" do

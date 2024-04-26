@@ -4,7 +4,7 @@ require "test_helper"
 
 class CountriesControllerTest < ActionDispatch::IntegrationTest
   setup do
-    @country = countries(:one)
+    @country = countries(:test)
   end
 
   test "should get index" do

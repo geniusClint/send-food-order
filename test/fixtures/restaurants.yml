@@ -1,13 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
+  name: Restaurant One
   location_name: MyString
-  location_code: MyString
-  slug: MyString
+  city: "City One"
+  state: one
+  slug: restaurant-one-mystring-city-one-tx
 
 two:
-  name: MyString
+  name: Restaurant Two
   location_name: MyString
-  location_code: MyString
-  slug: MyString
+  city: "City Two"
+  state: two
+  slug: restaurant-two-mystring-city-two-ts

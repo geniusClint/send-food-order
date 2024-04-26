@@ -7,3 +7,7 @@ one:
 two:
   name: Mexico
   code: MX
+
+test:
+  name: Test
+  code: TS

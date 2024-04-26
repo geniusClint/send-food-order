@@ -9,3 +9,8 @@ two:
   name: North Carolina
   code: NC
   country: two
+
+test:
+  name: Test State
+  code: TS
+  country: test
