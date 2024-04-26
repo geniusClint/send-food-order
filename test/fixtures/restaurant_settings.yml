@@ -1,0 +1,23 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  tax_rate: 9.99
+  website: MyString
+  reporting_code: MyString
+  order_cutoff_minutes: 1
+  notify_email: false
+  notification_email: MyText
+  timezone: MyString
+  day_start_time: 2024-04-25 22:53:03
+  restaurant: one
+
+two:
+  tax_rate: 9.99
+  website: MyString
+  reporting_code: MyString
+  order_cutoff_minutes: 1
+  notify_email: false
+  notification_email: MyText
+  timezone: MyString
+  day_start_time: 2024-04-25 22:53:03
+  restaurant: two

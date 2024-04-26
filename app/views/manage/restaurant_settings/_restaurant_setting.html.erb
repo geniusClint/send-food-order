@@ -1,0 +1,43 @@
+<div id="<%= dom_id restaurant_setting %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Tax rate:</strong>
+    <%= restaurant_setting.tax_rate %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Website:</strong>
+    <%= restaurant_setting.website %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Reporting code:</strong>
+    <%= restaurant_setting.reporting_code %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Order cutoff minutes:</strong>
+    <%= restaurant_setting.order_cutoff_minutes %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Notify email:</strong>
+    <%= restaurant_setting.notify_email %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Notification email:</strong>
+    <%= restaurant_setting.notification_email %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Timezone:</strong>
+    <%= restaurant_setting.timezone %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Day start time:</strong>
+    <%= restaurant_setting.day_start_time %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Restaurant:</strong>
+    <%= restaurant_setting.restaurant_id %>
+  </p>
+  <% if action_name != "show" %>
+    <%= link_to "Show this restaurant setting", manage_restaurant_setting_path(restaurant_setting), class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    <%= link_to 'Edit this restaurant setting', edit_manage_restaurant_setting_path(restaurant_setting), class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

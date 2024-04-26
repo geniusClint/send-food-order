@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_25_062036) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_26_035303) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -38,6 +38,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_062036) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "restaurant_settings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.decimal "tax_rate"
+    t.string "website"
+    t.string "reporting_code"
+    t.integer "order_cutoff_minutes"
+    t.boolean "notify_email"
+    t.text "notification_email"
+    t.string "timezone"
+    t.time "day_start_time"
+    t.uuid "restaurant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["restaurant_id"], name: "index_restaurant_settings_on_restaurant_id"
   end
 
   create_table "restaurants", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -90,6 +105,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_062036) do
   end
 
   add_foreign_key "addresses", "states"
+  add_foreign_key "restaurant_settings", "restaurants"
   add_foreign_key "restaurants", "states"
   add_foreign_key "states", "countries"
 end

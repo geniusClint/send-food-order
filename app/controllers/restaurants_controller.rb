@@ -24,6 +24,7 @@ class RestaurantsController < ApplicationController
   # POST /restaurants or /restaurants.json
   def create
     @restaurant = Restaurant.new(restaurant_params)
+    @restaurant.build_restaurant_setting
 
     respond_to do |format|
       if @restaurant.save

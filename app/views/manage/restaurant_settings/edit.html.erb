@@ -1,0 +1,5 @@
+<div class="mx-auto md:w-2/3 w-full">
+  <h1 class="font-bold text-4xl">Editing Restaurant - <%= @restaurant_setting.restaurant.name %></h1>
+  <%= render "form", restaurant_setting: @restaurant_setting %>
+  <%= link_to "Return to Restaurant", manage_restaurant_path(@restaurant_setting.restaurant), class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+</div>

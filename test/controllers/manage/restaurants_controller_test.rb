@@ -17,13 +17,18 @@ class Manage::RestaurantsControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
-  test "should create restaurant" do
+  test "should create restaurant with restaurant_settings" do
     assert_difference("Restaurant.count") do
       post manage_restaurants_url, params: { restaurant: { city: @restaurant.city, state_id: @restaurant.state.id, location_name: "Another Location", name: "Another Restaurant", slug: "another-restaurant-another-location-city-one-tx" } }
     end
 
     created_restaurant = Restaurant.find_by(slug: "another-restaurant-another-location-city-one-tx")
     assert_redirected_to manage_restaurant_url(created_restaurant)
+
+    # Make sure the restaurant_setting was created
+    assert_not_nil created_restaurant.restaurant_setting
+    assert_instance_of RestaurantSetting, created_restaurant.restaurant_setting
+    assert_equal created_restaurant.id, created_restaurant.restaurant_setting.restaurant_id
   end
 
   test "should show restaurant" do

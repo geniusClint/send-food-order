@@ -1,0 +1,12 @@
+<div class="mx-auto w-full">
+  <div class="mx-auto">
+    <%= render @restaurant_setting %>
+    <%= link_to 'Edit this Restaurant Settings', edit_manage_restaurant_setting_path(@restaurant_setting), 
+          class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 
+          focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    <div class="inline-block ml-2">
+      <%= link_to "Return to Restaurant", manage_restaurant_path(@restaurant_setting.restaurant), class: "rounded-md py-3 px-5 bg-gray-100 
+            inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    </div>
+  </div>
+</div>

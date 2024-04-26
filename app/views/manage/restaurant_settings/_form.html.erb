@@ -1,0 +1,51 @@
+<%= form_with(model: [:manage, restaurant_setting], class: "contents") do |form| %>
+  <% if restaurant_setting.errors.any? %>
+    <div id="error_explanation" class="bg-red-50 text-red-800 px-3 py-2 font-medium rounded-lg mt-3">
+      <h2><%= pluralize(restaurant_setting.errors.count, "error") %> prohibited this Restaurant_setting from being saved:</h2>
+      <ul>
+        <% restaurant_setting.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="my-5">
+    <%= form.label :tax_rate %>
+    <%= form.text_field :tax_rate, class: "px-3 py-2 mt-2" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :website %>
+    <%= form.text_field :website, class: "px-3 py-2 mt-2" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :reporting_code %>
+    <%= form.text_field :reporting_code, class: "px-3 py-2 mt-2" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :order_cutoff_minutes %>
+    <%= form.number_field :order_cutoff_minutes, class: "px-3 py-2 mt-2" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :notify_email %>
+    <%= form.check_box :notify_email, class: "block mt-2 h-5 w-5" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :notification_email %>
+    <%= form.text_area :notification_email, rows: 4, class: "px-3 py-2 mt-2" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :timezone %>
+    <%= form.text_field :timezone, class: "px-3 py-2 mt-2" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :day_start_time %>
+    <%= form.time_field :day_start_time, class: "px-3 py-2 mt-2" %>
+  </div>
+  <div class="my-5">
+    <%= form.label :restaurant_id %>
+    <%= form.text_field :restaurant_id, class: "px-3 py-2 mt-2" %>
+  </div>
+  <div class="inline">
+    <%= form.submit class: "rounded-md py-3 px-5 bg-primary-800 text-white inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+  </div>
+<% end %>

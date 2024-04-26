@@ -5,6 +5,7 @@ Rails.application.routes.draw do
 
   namespace :manage do
     resources :restaurants
+    resources :restaurant_settings, only: [ :show, :edit, :update]
   end
 
   namespace :admin do

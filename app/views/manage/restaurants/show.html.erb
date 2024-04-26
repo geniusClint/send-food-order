@@ -1,9 +1,12 @@
 <div class="mx-auto w-full">
   <div class="mx-auto">
+    <div class="flex justify-end text-accent-400 hover:underline">
+      <%= link_to edit_manage_restaurant_setting_path(@restaurant.restaurant_setting) do %>Edit Settings <%= icon("gear-fill", classes: "ml-1 inline-block") %>
+      <% end %></div>
     <%= render @restaurant %>
     <%= link_to 'Edit this restaurant', edit_manage_restaurant_path(@restaurant), class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
     <div class="inline-block ml-2">
-      <%= button_to 'Destroy this restaurant', manage_restaurant_path(@restaurant), method: :delete, class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+      <%= button_to 'Destroy this restaurant', manage_restaurant_path(@restaurant), data: { confirm: "Are you sure?", turbo_confirm: "Are you sure?" }, method: :delete, class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
     </div>
     <%= link_to 'Back to restaurants', manage_restaurants_path, class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
   </div>

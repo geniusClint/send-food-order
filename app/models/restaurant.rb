@@ -5,6 +5,8 @@ class Restaurant < ApplicationRecord
 
   belongs_to :state
 
+  has_one :restaurant_setting, dependent: :destroy
+
   validates :name, presence: true
   validates :city, presence: :true
   validates :state_id, presence: :true

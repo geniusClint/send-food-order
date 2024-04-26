@@ -1,6 +1,6 @@
 <div data-controller="infotip" data-tooltip-element="<%= element_id %>" class="inline-block align-middle">
   <div data-action="mouseover->infotip#mouseOver mouseout->infotip#mouseOut" data-element="tooltip-<%= element_id %>"><%= icon("info-circle-fill", classes: "text-accent-400 text-small", element_id: element_id) %></div>
-  <div data-infotip-target="infoTip" id="tooltip-<%= element_id %>" role="tooltip" class="absolute z-10 inline-block px-3 py-2 text-sm font-medium text-white bg-primary-800 rounded-lg shadow-sm invisible tooltip">
+  <div data-infotip-target="infoTip" id="tooltip-<%= element_id %>" role="tooltip" class="absolute z-10 inline-block px-3 py-2 text-sm font-medium text-white bg-primary-800 rounded-lg shadow-sm invisible opacity-0 transition-opacity duration-1000 tooltip">
     <%= t element_id %>
   </div>
 </div>
