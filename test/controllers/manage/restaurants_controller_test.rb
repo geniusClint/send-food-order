@@ -1,0 +1,48 @@
+require "test_helper"
+
+class Manage::RestaurantsControllerTest < ActionDispatch::IntegrationTest
+  setup do
+    @restaurant = restaurants(:one)
+  end
+
+  test "should get index" do
+    get manage_restaurants_url
+    assert_response :success
+  end
+
+  test "should get new" do
+    get new_manage_restaurant_url
+    assert_response :success
+  end
+
+  test "should create restaurant" do
+    assert_difference("Restaurant.count") do
+      post manage_restaurants_url, params: { restaurant: {  } }
+    end
+
+    assert_redirected_to manage_restaurant_url(Restaurant.last)
+  end
+
+  test "should show restaurant" do
+    get manage_restaurant_url(@restaurant)
+    assert_response :success
+  end
+
+  test "should get edit" do
+    get edit_manage_restaurant_url(@restaurant)
+    assert_response :success
+  end
+
+  test "should update restaurant" do
+    patch manage_restaurant_url(@restaurant), params: { restaurant: {  } }
+    assert_redirected_to manage_restaurant_url(@restaurant)
+  end
+
+  test "should destroy restaurant" do
+    assert_difference("Restaurant.count", -1) do
+      delete manage_restaurant_url(@restaurant)
+    end
+
+    assert_redirected_to manage_restaurants_url
+  end
+end

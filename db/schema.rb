@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_25_042045) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_25_062036) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -38,6 +38,17 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_042045) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "restaurants", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.string "name"
+    t.string "location_name"
+    t.string "slug"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "city"
+    t.uuid "state_id"
+    t.index ["state_id"], name: "index_restaurants_on_state_id"
   end
 
   create_table "states", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -79,5 +90,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_25_042045) do
   end
 
   add_foreign_key "addresses", "states"
+  add_foreign_key "restaurants", "states"
   add_foreign_key "states", "countries"
 end

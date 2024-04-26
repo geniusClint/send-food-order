@@ -1,0 +1,22 @@
+<div id="<%= dom_id restaurant %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Name:</strong>
+    <%= restaurant.name %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Location name:</strong>
+    <%= restaurant.location_name %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">City:</strong>
+    <%= restaurant.city %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">State:</strong>
+    <%= restaurant.state.name %>
+  </p>
+  <% if action_name != "show" %>
+    <%= link_to "Show this restaurant", restaurant, class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

@@ -1,7 +1,12 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  resources :addresses
+  resources :restaurants, only: [:index, :show]
+
+  namespace :manage do
+    resources :restaurants
+  end
+
   namespace :admin do
     resources :countries
     resources :states

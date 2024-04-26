@@ -29,3 +29,5 @@
 
 en:
   hello: "Hello world"
+  location_name: "If you have multiple locations, you can use this to differentiate between them. For example North in Joe's Cafe North, or the name of the shopping center such as Joe's Cafe Gateway Plaza"
+  state_id: "This is a test"
