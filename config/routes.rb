@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   resources :restaurants, only: [:index, :show]
 
   namespace :manage do
+    resources :phones
+    resources :addresses
     resources :restaurants
     resources :restaurant_settings, only: [ :show, :edit, :update]
   end

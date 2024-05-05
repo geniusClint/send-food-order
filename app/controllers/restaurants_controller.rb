@@ -31,6 +31,7 @@ class RestaurantsController < ApplicationController
         format.html { redirect_to restaurant_url(@restaurant), notice: "Restaurant was successfully created." }
         format.json { render :show, status: :created, location: @restaurant }
       else
+        logger.error "Error creating restaurant: #{@restaurant.errors.full_messages.join(', ')}"
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @restaurant.errors, status: :unprocessable_entity }
       end
@@ -44,6 +45,7 @@ class RestaurantsController < ApplicationController
         format.html { redirect_to restaurant_url(@restaurant), notice: "Restaurant was successfully updated." }
         format.json { render :show, status: :ok, location: @restaurant }
       else
+        logger.error "Error updating restaurant: #{@restaurant.errors.full_messages.join(', ')}"
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @restaurant.errors, status: :unprocessable_entity }
       end

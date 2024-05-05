@@ -8,7 +8,7 @@ one:
   city: Some City
   state: one
   zipcode: 76111
-  addressable: (User)
+  addressable: customer_one (User)
 
 two:
   address_type: 1
@@ -18,4 +18,4 @@ two:
   city: Another City
   state: two
   zipcode: 79222
-  addressable: admin_one (User)
+  addressable: one (Restaurant)

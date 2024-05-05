@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_04_26_035303) do
+ActiveRecord::Schema[7.1].define(version: 2024_04_26_065915) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
   enable_extension "plpgsql"
@@ -38,6 +38,20 @@ ActiveRecord::Schema[7.1].define(version: 2024_04_26_035303) do
     t.string "code"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "phones", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.integer "phone_type"
+    t.string "country_code"
+    t.string "number"
+    t.string "phone_contirmation_token"
+    t.datetime "phone_confirmation_token_expiration"
+    t.boolean "phone_confirmed"
+    t.string "phonable_type", null: false
+    t.uuid "phonable_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["phonable_type", "phonable_id"], name: "index_phones_on_phonable"
   end
 
   create_table "restaurant_settings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|

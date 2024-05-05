@@ -11,6 +11,7 @@ class User < ApplicationRecord
   validates :last_name, presence: true
 
   has_many :addresses, as: :addressable
+  has_many :phones, as: :phonable
 
   accepts_nested_attributes_for :addresses
 

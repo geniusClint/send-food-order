@@ -30,6 +30,7 @@ class Manage::RestaurantSettingsController < ApplicationController
         format.html { redirect_to manage_restaurant_setting_url(@restaurant_setting), notice: "Restaurant setting was successfully created." }
         format.json { render :show, status: :created, location: @restaurant_setting }
       else
+        logger.error "Error creating restaurant setting: #{@restaurant_setting.errors.full_messages.join(', ')}"
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @restaurant_setting.errors, status: :unprocessable_entity }
       end
@@ -43,6 +44,7 @@ class Manage::RestaurantSettingsController < ApplicationController
         format.html { redirect_to manage_restaurant_setting_url(@restaurant_setting), notice: "Restaurant setting was successfully updated." }
         format.json { render :show, status: :ok, location: @restaurant_setting }
       else
+        logger.error "Error updating restaurant setting: #{@restaurant_setting.errors.full_messages.join(', ')}"
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @restaurant_setting.errors, status: :unprocessable_entity }
       end

@@ -1,0 +1,35 @@
+<div id="<%= dom_id phone %>">
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone type:</strong>
+    <%= phone.phone_type %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Country code:</strong>
+    <%= phone.country_code %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Number:</strong>
+    <%= phone.number %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone contirmation token:</strong>
+    <%= phone.phone_contirmation_token %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone confirmation token expiration:</strong>
+    <%= phone.phone_confirmation_token_expiration %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phone confirmed:</strong>
+    <%= phone.phone_confirmed %>
+  </p>
+  <p class="my-5">
+    <strong class="block font-medium mb-1">Phonable:</strong>
+    <%= phone.phonable_id %>
+  </p>
+  <% if action_name != "show" %>
+    <%= link_to "Show this phone", manage_phone_path(phone), class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    <%= link_to 'Edit this phone', edit_manage_phone_path(phone), class: "rounded-md py-3 px-5 bg-gray-100 inline-block font-medium capitalize hover:text-white hover:bg-accent-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-accent-400" %>
+    <hr class="mt-6">
+  <% end %>
+</div>

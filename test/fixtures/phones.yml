@@ -1,0 +1,19 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  phone_type: 1
+  country_code: MyString
+  number: MyString
+  phone_contirmation_token: MyString
+  phone_confirmation_token_expiration: 2024-04-26 01:59:15
+  phone_confirmed: false
+  phonable: customer_one (User)
+
+two:
+  phone_type: 1
+  country_code: MyString
+  number: MyString
+  phone_contirmation_token: MyString
+  phone_confirmation_token_expiration: 2024-04-26 01:59:15
+  phone_confirmed: false
+  phonable: two (Restaurant)
